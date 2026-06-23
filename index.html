@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoInfo - Aplikasi Informasi Negara</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; width: 380px; }
+        .search-box { display: flex; margin-bottom: 20px; }
+        input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px 0 0 8px; outline: none; font-size: 16px; }
+        button { padding: 12px 20px; border: none; background: #28a745; color: white; border-radius: 0 8px 8px 0; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background: #218838; }
+        .country-info { display: none; margin-top: 25px; text-align: left; }
+        .flag-img { width: 100%; max-height: 180px; object-fit: cover; border-radius: 8px; border: 1px solid #eee; margin-bottom: 15px; }
+        .country-name { font-size: 24px; font-weight: bold; margin: 10px 0; text-align: center; color: #333; }
+        .detail-item { margin: 8px 0; font-size: 16px; color: #555; }
+        .detail-item strong { color: #222; }
+        .error { color: #dc3545; font-weight: bold; margin-top: 15px; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2 style="margin-top: 0; color: #333;">🌍 GeoInfo</h2>
+    <p style="color: #777; font-size: 14px; margin-bottom: 20px;">Cari informasi negara di dunia (Gunakan bahasa Inggris, misal: Indonesia, Japan, Mexico)</p>
+    
+    <div class="search-box">
+        <input type="text" id="countryInput" placeholder="Masukkan nama negara...">
+        <button id="searchBtn">Cari</button>
+    </div>
+    
+    <p class="error" id="errorMsg">Negara tidak ditemukan!</p>
+
+    <!-- Hasil Pencarian Negara -->
+    <div class="country-info" id="countryInfo">
+        <img id="flag" class="flag-img" src="" alt="Bendera">
+        <div id="countryName" class="country-name">Nama Negara</div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+        <div class="detail-item">🏛️ <strong>Ibu Kota:</strong> <span id="capital">-</span></div>
+        <div class="detail-item">📍 <strong>Wilayah/Benua:</strong> <span id="region">-</span></div>
+        <div class="detail-item">👥 <strong>Populasi:</strong> <span id="population">-</span> jiwa</div>
+        <div class="detail-item">💵 <strong>Mata Uang:</strong> <span id="currency">-</span></div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
