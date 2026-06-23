@@ -14,7 +14,8 @@ document.getElementById('countryInput').addEventListener('keypress', (e) => {
 
 async function getCountryData(countryName) {
     // API ini publik, gratis, dan langsung aktif tanpa KEY!
-    const url = `https://restcountries.com/v3.1/name/${countryName}`;
+    // Ganti baris url lama dengan yang baru ini:
+const url = `https://openconcepts-countries.github.io/restcountries/v3.1/name/${countryName}.json`;
     
     try {
         const response = await fetch(url);
